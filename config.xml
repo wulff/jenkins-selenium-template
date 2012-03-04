@@ -25,7 +25,7 @@
     <hudson.plugins.seleniumhq.SeleniumhqBuilder>
       <browser>*firefox</browser>
       <startURL>http://www.example.com/</startURL>
-      <suiteFile>suite.html</suiteFile>
+      <suiteFile>test/selenium/suite.html</suiteFile>
       <resultFile>seleniumhq/result.html</resultFile>
       <other></other>
     </hudson.plugins.seleniumhq.SeleniumhqBuilder>
