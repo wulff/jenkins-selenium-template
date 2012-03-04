@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.plugins.redmine.RedmineProjectProperty>
+      <projectName></projectName>
+      <redmineVersion>false</redmineVersion>
+    </hudson.plugins.redmine.RedmineProjectProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>true</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector"/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <EnvInjectBuilder>
+      <info>
+        <propertiesContent>DISPLAY=:99</propertiesContent>
+      </info>
+    </EnvInjectBuilder>
+    <hudson.plugins.seleniumhq.SeleniumhqBuilder>
+      <browser>*firefox</browser>
+      <startURL>http://www.example.com/</startURL>
+      <suiteFile>suite.html</suiteFile>
+      <resultFile>seleniumhq/result.html</resultFile>
+      <other></other>
+    </hudson.plugins.seleniumhq.SeleniumhqBuilder>
+  </builders>
+  <publishers>
+    <hudson.plugins.seleniumhq.SeleniumhqPublisher>
+      <testResults>seleniumhq/*.html</testResults>
+      <useTestCommands>false</useTestCommands>
+    </hudson.plugins.seleniumhq.SeleniumhqPublisher>
+    <hudson.plugins.statusmonitor.MonitorPublisher/>
+  </publishers>
+  <buildWrappers/>
+</project>
