@@ -35,7 +35,6 @@
       <testResults>seleniumhq/*.html</testResults>
       <useTestCommands>false</useTestCommands>
     </hudson.plugins.seleniumhq.SeleniumhqPublisher>
-    <hudson.plugins.statusmonitor.MonitorPublisher/>
   </publishers>
   <buildWrappers/>
 </project>
